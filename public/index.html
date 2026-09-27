@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChronoCapsule</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            ⏳ ChronoCapsule
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#capsules">My Capsules</a>
+
+            <button id="createBtn">
+                Create Capsule
+            </button>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    YOUR MESSAGE • YOUR FUTURE
+                </p>
+
+                <h1>
+                    A message today.
+                    <span>A memory tomorrow.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Write something meaningful, choose when it should
+                    be unlocked, and let time keep it safe until then.
+                </p>
+
+                <button class="primary-btn" id="heroCreateBtn">
+                    ✨ Create a Time Capsule
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Capsules Section -->
+
+        <section id="capsules" class="capsules-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        YOUR COLLECTION
+                    </p>
+
+                    <h2>
+                        My Time Capsules
+                    </h2>
+                </div>
+
+                <span id="capsuleCount">
+                    0 capsules
+                </span>
+
+            </div>
+
+
+            <div id="capsuleContainer" class="capsule-grid">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ⏳
+                    </div>
+
+                    <h3>
+                        No capsules yet
+                    </h3>
+
+                    <p>
+                        Create your first message for the future.
+                    </p>
+
+                    <button class="primary-btn" id="emptyCreateBtn">
+                        Create Capsule
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Create Capsule Modal -->
+
+    <div id="capsuleModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal">
+                ×
+            </button>
+
+            <p class="eyebrow">
+                NEW CAPSULE
+            </p>
+
+            <h2>
+                Create Your Time Capsule
+            </h2>
+
+            <p class="modal-description">
+                Write something for your future self.
+            </p>
+
+
+            <form id="capsuleForm">
+
+                <label for="title">
+                    Capsule Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Example: Message to Future Me"
+                    required
+                >
+
+
+                <label for="message">
+                    Your Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+
+                <label for="unlockDate">
+                    Unlock Date
+                </label>
+
+                <input
+                    type="date"
+                    id="unlockDate"
+                    name="unlockDate"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-width"
+                >
+                    🔒 Seal Capsule
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 ChronoCapsule
+        </p>
+
+        <p>
+            Version:
+            <span id="commitId">local</span>
+        </p>
+
+    </footer>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
