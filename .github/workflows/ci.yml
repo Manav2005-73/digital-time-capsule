@@ -26,3 +26,24 @@ jobs:
 
       - name: Run lint
         run: npm run lint
+
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t chronocapsule .
+
+      - name: Run Docker container
+        run: |
+          docker run -d --name chronocapsule -p 3000:3000 chronocapsule
+          sleep 5
+
+      - name: Check application health
+        run: curl --fail http://localhost:3000/health
+
+      - name: Stop Docker container
+        run: docker stop chronocapsule
