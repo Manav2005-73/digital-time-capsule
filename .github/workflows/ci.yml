@@ -47,7 +47,8 @@ jobs:
 
       - name: Stop Docker container
         run: docker stop chronocapsule
-    deploy:
+
+  deploy:
     needs: [test-and-lint, docker-build]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
