@@ -378,3 +378,15 @@ capsuleContainer.addEventListener("click", async (event) => {
         alert("Unable to connect to the server.");
     }
 });
+async function loadVersion() {
+    try {
+        const response = await fetch("/api/version");
+        const data = await response.json();
+
+        document.getElementById("commitId").textContent = data.commitId;
+    } catch (error) {
+        console.error("Error loading version:", error);
+    }
+}
+
+loadVersion();
