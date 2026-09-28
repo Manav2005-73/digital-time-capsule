@@ -35,7 +35,11 @@ app.get("/health", (req, res) => {
         status: "ok"
     });
 });
-
+app.get("/api/version", (req, res) => {
+    res.json({
+        commitId: process.env.RENDER_GIT_COMMIT || "local"
+    });
+});
 
 // ------------------------------------
 // GET ALL CAPSULES
